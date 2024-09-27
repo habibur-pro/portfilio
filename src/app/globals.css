@@ -5,12 +5,18 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  --primary: #ffffff;
+  --secondary: #dadada;
+  --highlight: #4ae3b5;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #18212a;
     --foreground: #bbbbbb;
+    --primary: #18212a;
+    --secondary: #151c22;
+    --highlight: #4ae3b5;
   }
 }
 
@@ -25,11 +31,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-outfit), sans-serif; /* Use Outfit for headings */
+  font-family: var(--font-outfit), sans-serif;
 }
 
 @layer utilities {
-  /* Define custom utility classes */
   .font-outfit {
     font-family: var(--font-outfit), sans-serif;
   }
