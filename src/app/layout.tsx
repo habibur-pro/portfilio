@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Outfit, Raleway } from "next/font/google";
 import "./globals.css";
 
+import ReduxProvider from "@/context/ReduxProvider";
+import MobileNav from "@/components/ui/MobileNav";
+import Navbar from "@/components/ui/Navbar";
+
 const outfit = Outfit({
   subsets: ["latin"],
   variable: "--font-outfit",
@@ -25,7 +29,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${outfit.variable} ${raleway.variable} antialiased`}>
-        {children}
+        <ReduxProvider>
+          <Navbar />
+          <MobileNav />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
